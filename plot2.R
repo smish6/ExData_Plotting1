@@ -13,7 +13,9 @@ plot2 <- function() {
         # Open the png device
         png("plot2.png")
         
-        # Create the plot as required.
+        # Create the plot with TimeStamp in x axis and Global active power in y.
+        # Set the label for both axis and the type as "l" since we need a line
+        # graph
         plot(x = plotData$TimeStamp, y = plotData$Global_active_power, ylab = "Global Active Power (kilowatts)", xlab = "", type = "l")
         
         # Close the graphics device.
