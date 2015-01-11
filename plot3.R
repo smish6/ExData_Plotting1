@@ -13,10 +13,11 @@ plot3 <- function() {
         # Open the png device
         png("plot3.png")
         
-        # Create the histogram for the Global Active Power variable. Convert the
-        # variable to numeric for the plot. Add the title through main parameter.
-        # Add X-lable through xlab and color to the bars through col parameters.
-        hist(as.numeric(plotData$Global_active_power), main = "Global Active Power", xlab = "Global Active Power (kilowatts)", col = "red")
+        # Create the plot as required
+        plot(x = plotData$TimeStamp, y = plotData$Sub_metering_1, ylab = "Energy sub metering", xlab = "", type = "l")
+        lines(plotData$TimeStamp, plotData$Sub_metering_2, col = "red")
+        lines(plotData$TimeStamp, plotData$Sub_metering_3, col = "blue")
+        legend("topright", col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty = c(1,1,1))
         
         # Close the graphics device.
         dev.off()

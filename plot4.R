@@ -13,9 +13,8 @@ plot4 <- function() {
         # Open the png device
         png("plot4.png")
         
-        # Create the histogram for the Global Active Power variable. Convert the
-        # variable to numeric for the plot. Add the title through main parameter.
-        # Add X-lable through xlab and color to the bars through col parameters.
+        # Create the plot as required
+        par(mfcol = c(2,2))
         hist(as.numeric(plotData$Global_active_power), main = "Global Active Power", xlab = "Global Active Power (kilowatts)", col = "red")
         
         # Close the graphics device.
