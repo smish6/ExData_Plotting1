@@ -1,12 +1,15 @@
-# This function assumes that the downloaded and extracted file is available in
-# same location as the code file. The filename expected is as provided through
-# original archive: household_power_consumption.txt
 # This function is responsible for getting the data that is needed for the plots
 # I have extracted this as a separate function, and then reused it in all four 
 # files for the assignment as all files need to extract their own data.
 #
 # The activities done are described before each step below
 getData <- function() {
+        # Download the zip archive
+        download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip", "household_power_consumption.zip", method = "curl")
+        
+        # Unzip the archive
+        unzip("household_power_consumption.zip")
+        
         # Read the full file
         housedata <- read.csv2("household_power_consumption.txt", sep = ";",
                                stringsAsFactors = FALSE)
